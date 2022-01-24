@@ -1,0 +1,3 @@
+- This folder contains the views for both admin and employee dashboards.
+- Admin dash boards gives the user the ability to create/modify schedules, review timecards, and create/modify employees.
+- The emploeyee dashboard allows the user to see if they are scheduled to work that day and the next upcoming scheduled work day.

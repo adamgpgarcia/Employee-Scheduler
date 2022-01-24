@@ -1,0 +1,4 @@
+- This folder contains the features for the weekly schedule view section of the application.
+- Users can filter weekly schedule view by all, personal, and pick up shift options.
+- Widgets for viewing shifts.
+- Functionality for a message to be sent when a shift is picked up by another employee.

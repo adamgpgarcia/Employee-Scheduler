@@ -1,0 +1,1 @@
+- This folder contains views that admin users have to view employee shifts and schedules.
