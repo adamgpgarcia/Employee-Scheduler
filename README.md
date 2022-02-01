@@ -84,11 +84,10 @@ int foo() {
        
   <p>There wasn't a whole lot he could do at that moment. He played the situation again and again in his head looking at what he might have done differently to make the situation better. No matter how many times he relived the situation in his head, there was never really a good alternative course of action. There simply wasn't a whole lot he could have done in that particular moment.</p>
 
-    </p>
+    
   </div>
   <div class="column"><p align="right">
   <img src="https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png" />
-</p>
 </div>
 </div>
 
