@@ -17,11 +17,7 @@ Django Database / Rest Api Application
 * **cd /var/www/html/RestApi/src**
 * **sudo python3 manage.py runserver 0.0.0.0:8000**
 
-<style>
-.center {
-  text-align: center;
-}
-</style>
+
 
 
 <div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-rule: 1px dotted #e0e0e0; -moz-column-rule: 1px dotted #e0e0e0; column-rule: 1px dotted #e0e0e0;">
@@ -74,7 +70,7 @@ int foo() {
 
 
 <div class="row">
-  <div class="center"><p align="left">
+  <div class="column"><p align="left">
         This is a paragraph.
     </p>
   </div>
@@ -91,13 +87,6 @@ int foo() {
 
 
 
-
-
-<div class="row">
-  <div class="column">The image to the right</div>
-  <div class="column">
-![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)</div>
-</div>
 
 
 ![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
