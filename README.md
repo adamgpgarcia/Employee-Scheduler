@@ -28,9 +28,7 @@ Django Database / Rest Api Application
     </div>
     <div style="display: inline-block;">
         <h2>Bad</h2>
-        <pre><code class="language-c">int foo (void) {
-    int i;
-}
+        <pre><code class="language-c">![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
 </code></pre>
     </div>
 </div>
