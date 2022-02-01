@@ -1,5 +1,5 @@
-Adam Garcia Fall 2020
-Senior Capstone - Casa Colina Employee Scheduler 
+# Adam Garcia Fall 2020
+## Senior Capstone - Casa Colina Employee Scheduler 
 
 Front End 
 
