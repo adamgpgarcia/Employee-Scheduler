@@ -59,8 +59,9 @@ int foo() {
 </table>
 
 <div class="row">
-  <div class="column"></div>
-  <div class="column"></div>
+  <div class="column">The image to the right</div>
+  <div class="column">
+![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)</div>
 </div>
 
 ![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
