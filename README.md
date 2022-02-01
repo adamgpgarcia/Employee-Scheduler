@@ -1,3 +1,13 @@
+
+<head>
+<style>
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+</style>
+</head>
+
 # Adam Garcia Fall 2020
 ## Senior Capstone - Casa Colina Employee Scheduler 
 
@@ -71,7 +81,9 @@ int foo() {
 
 <div class="row">
   <div class="column"><p align="left">
-        This is a paragraph.
+       <div class="center">
+  <p>Hello World!</p>
+</div>
     </p>
   </div>
   <div class="column"><p align="right">
