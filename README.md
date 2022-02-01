@@ -51,11 +51,7 @@ int foo() {
 </td>
 <td>
 
-```c++
-int foo() { 
-    int x = 4;
-    return x;
-}
+```![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
 ```
 
 </td>
