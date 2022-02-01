@@ -67,9 +67,16 @@ int foo() {
 <p align="right">
 
 </p>
-<p align="center">
+<p align="right">
   <img src="![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)" />
 </p>
+
+<div class="row">
+  <div class="column">The image to the right</div>
+  <div class="column">
+![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)</div>
+</div>
+
 
 ![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
 ![image5](https://user-images.githubusercontent.com/25330599/152046452-498a5693-f172-40c8-b1a9-caeca9f797e2.png)
