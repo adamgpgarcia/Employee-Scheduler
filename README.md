@@ -3,11 +3,11 @@
 
 Front End 
 
--	Flutter application Steps to run
-		- Open ScheduleApp folder
-		- Fluter APK installed
-		- Google APK installed
-		- Run Android Emulator 
+Flutter application Steps to run
+* **Open ScheduleApp folder**
+* **Fluter APK installed**
+* **Google APK installed**
+* **Run Android Emulator**
 
 Backend End
 -	Django Database / Rest Api Application 
