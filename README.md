@@ -68,7 +68,7 @@ int foo() {
 
 </p>
 <p align="right">
-  <img src="![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)" />
+  <img src="https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png" />
 </p>
 
 <div class="row">
