@@ -4,11 +4,11 @@ import 'package:intl/intl.dart';
 import '../providers/schedules.dart';
 import 'package:date_util/date_util.dart';
 import './schedules.dart';
-
 import './employees.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+//shift class definition
 class ShiftModel {
   int shiftID;
   int scheduleID;
@@ -35,6 +35,7 @@ class ShiftModel {
   });
 }
 
+//shift provider
 class Shifts with ChangeNotifier {
   List<ShiftModel> _shiftList = [];
 
@@ -69,6 +70,7 @@ class Shifts with ChangeNotifier {
     return isIn;
   }
 
+  //changes status of time card submission
   bool timeCardSubmitted(List<ShiftModel> userShifts) {
     for (int i = 0; i < userShifts.length; i++) {
       if (userShifts[i].confirmed == true) {
@@ -78,6 +80,7 @@ class Shifts with ChangeNotifier {
     return false;
   }
 
+  //checks if shift is submitted
   bool isSubmitted(ShiftModel temp) {
     if (temp.confirmed == true) {
       return true;
@@ -86,6 +89,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //this function calculates timecard hours
   TimecardCalculations timeCalculations(
       var shift, int employeeID, List<TimeCard> userTimeCard) {
     double totalReg = 0;
@@ -128,6 +132,7 @@ class Shifts with ChangeNotifier {
         lunchTime: lunchTime);
   }
 
+  //this function calculates timecard hours
   TimecardCalculations timeCalculationsAdmin(
       var shift, int employeeID, List<TimeCard> userTimeCard) {
     double totalReg = 0;
@@ -167,6 +172,7 @@ class Shifts with ChangeNotifier {
         lunchTime: lunchTime);
   }
 
+  //this function calculates timecard hours
   TimecardCalculations timeCalculationsSingle(
       var shift, int employeeID, TimeCard item) {
     double totalReg = 0;
@@ -199,6 +205,7 @@ class Shifts with ChangeNotifier {
         lunchTime: lunchTime);
   }
 
+  //not sure, but it compiles a list of shifts based on user id and adds a timecardrecord object to the end of the list
   List<TimecardRecord> getRecords(
       int scheduleID, List<EmployeeAccount> employees) {
     List<TimecardRecord> master = [];
@@ -220,6 +227,7 @@ class Shifts with ChangeNotifier {
     return master;
   }
 
+  //returns number of shifts on schedule
   int countShiftsOnSchedule(int day) {
     List tempShifts = [];
     tempShifts =
@@ -232,6 +240,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //returns number of shifts on day
   int countShiftsOnDay(DateTime day) {
     var formattedDay = DateFormat.yMMMd().format(day);
     List<ShiftModel> tempShifts = [];
@@ -248,6 +257,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //returns number of shifts on day repeat of function above
   int shiftOnDay(DateTime day) {
     var formattedDay = DateFormat.yMMMd().format(day);
     List<ShiftModel> tempShifts = [];
@@ -264,6 +274,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //returns a shift if your working today
   ShiftModel shiftToday(DateTime day, int userID) {
     ShiftModel dummy;
     List<ShiftModel> temp;
@@ -280,24 +291,25 @@ class Shifts with ChangeNotifier {
   }
 
   //forsending only current users schedules to timecards
-
-  //forsending only current users schedules to timecards
   List<ShiftModel> get releasedSchedule {
     return _shiftList.where((tx) {
       return tx.release == true;
     }).toList();
   }
 
+  //returns a list of shifts
   List<ShiftModel> get items {
     return [..._shiftList]; // ... is the spread operator
   }
 
+  //returns a list of shifts which match a user id
   List<ShiftModel> getUserShifts(int userID) {
     return _shiftList.where((tx) {
       return tx.employeeID == userID;
     }).toList();
   }
 
+  //returns shifts on a day
   List<ShiftModel> getShiftsOnDay(DateTime day) {
     var formattedDay = DateFormat.yMMMd().format(day);
     List<ShiftModel> tempShifts = [];
@@ -310,6 +322,7 @@ class Shifts with ChangeNotifier {
     return tempShifts;
   }
 
+  //returns shift on a day with user id
   ShiftModel getShiftOnDay(DateTime day, int userID) {
     List<ShiftModel> userShiftList = [];
     userShiftList = _shiftList.where((tx) => tx.employeeID == userID).toList();
@@ -397,8 +410,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
-  // /////////////////////////// API
-
+  //gets shifts from database
   Future<void> getShifts(String token) async {
     var headers = {
       'Content-Type': 'application/json',
@@ -433,6 +445,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //deletes shifts from database
   Future<void> deleteShift(ShiftModel shift, int id, String token) async {
     var headers = {
       'Authorization': "token $token",
@@ -453,6 +466,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //submits timecard
   void toggleSubmitTimeCard(List<TimeCard> userTimeCard, String token) {
     for (var items in userTimeCard) {
       if (items.shift.employeeID != 0) {
@@ -462,6 +476,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //updates shift from database
   Future<void> updateShift(ShiftModel shift, int id, String token) async {
     var headers = {
       'Authorization': "token $token",
@@ -498,6 +513,7 @@ class Shifts with ChangeNotifier {
     }
   }
 
+  //creates a shift in the database
   Future<void> setShift(ShiftModel shift, String token) async {
     var headers = {
       'Authorization': "token $token",
@@ -548,6 +564,7 @@ class Shifts with ChangeNotifier {
     });
   }
 
+  //this function creates a list of the dates for the week
   List<int> get currentWeekList {
     //Variables and values needed for week function
     List<int> currentWeek = [];
@@ -601,10 +618,12 @@ class Shifts with ChangeNotifier {
     return currentWeek;
   }
 
+  //formats time
   int formattedHour(DateTime startTime, DateTime endTime) {
     return hoursWorked(startTime, endTime).toInt();
   }
 
+  //formats minutes
   int formattedMinute(startTime, endTime) {
     double minute = hoursWorked(startTime, endTime);
     int formattedHour = hoursWorked(startTime, endTime).toInt();
@@ -619,6 +638,7 @@ class Shifts with ChangeNotifier {
     return formattedMinute;
   }
 
+  //rounds up by 15 min if needed
   double hoursWorked(startTime, endTime) {
     // double totalHours;
 

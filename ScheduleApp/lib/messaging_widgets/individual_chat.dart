@@ -8,6 +8,7 @@ import './message_bubble.dart';
 import 'dart:async';
 import 'dart:math' as math;
 
+//the search bar allows the user to pick which employee they want to send a message too, drop down list selection
 class SearchBar extends StatefulWidget {
   final ChatModel chatItem;
   final Function setLocalChat;
@@ -21,6 +22,7 @@ class SearchBar extends StatefulWidget {
 class _SearchBarState extends State<SearchBar> {
   //final _searchFocusNode = FocusNode();
 
+  //this function sets the current chat
   void _pickUser(int receiverId, int userId, var chat) {
     widget.setLocalChat(receiverId, userId, chat);
   }
@@ -42,6 +44,7 @@ class _SearchBarState extends State<SearchBar> {
     var auth = Provider.of<Auth>(context, listen: false);
     var chat = Provider.of<Chats>(context, listen: false);
 
+    //formatting and styling
     return Column(
       children: <Widget>[
         searchDropdown
@@ -168,6 +171,7 @@ class _SearchBarState extends State<SearchBar> {
   }
 }
 
+//returns the user id of the person in the chat
 int chatMember(ChatModel args, auth) {
   int temp;
   for (int i = 0; i < args.recipients.length; i++) {
@@ -191,6 +195,7 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
 
   int currentReceiver;
 
+  //sets local chat
   void setLocalChat(int receiverId, int userId, var chat) {
     if (chat.inChatWith(userId, receiverId)) {
       int temp = chat.inChatWithID(userId, receiverId);
@@ -235,6 +240,7 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
 
     print(tempChat.chatID);
 
+    //function checks if null
     bool isNull() {
       if (tempChat.chatID == 0) {
         return true;
@@ -249,6 +255,7 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
       // print("chatID ==null");
     }
 
+    //this function sends the message
     Future<void> createChatnMessage() async {
       final enteredMessage = _messageController.text;
 
@@ -268,6 +275,7 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
       );
     }
 
+    //this function submits the message
     void _submitMessage() {
       final enteredMessage = _messageController.text;
       //final enteredAmount = double.parse(_amountController.text);
@@ -278,7 +286,6 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
       }
 
       if (tempChat.chatID != 0) {
-        print("here");
         messages.sendMessage(
           MessageModel(
             messageID: null,
@@ -292,7 +299,6 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
           auth.token,
         );
       } else if (messages.sharedMessages(auth.user, currentReceiver) != null) {
-        print("lol");
         ChatModel temp = chat.inChatWithChat(
             messages.sharedMessages(auth.user, currentReceiver));
         chat.rejoinChat(auth.token, temp, auth.user);
@@ -311,8 +317,6 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
         );
       } else {
         createChatnMessage();
-
-        print("fdf");
       }
 
       FocusScope.of(context).unfocus();
@@ -320,6 +324,7 @@ class _IndividualChatScreenState extends State<IndividualChatScreen> {
       Navigator.of(context).pop();
     }
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: !isNull()

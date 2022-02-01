@@ -1,5 +1,4 @@
 import 'package:ScheduleApp/account_widgets/availibility_screen.dart';
-
 import '../providers/employees.dart';
 import 'package:flutter/material.dart';
 import '../providers/auth.dart';
@@ -7,6 +6,7 @@ import 'package:provider/provider.dart';
 
 bool toggleDropdown = false;
 
+//user account screen where user can logout of app
 class AccountScreen extends StatefulWidget {
   @override
   _AccountScreenState createState() => _AccountScreenState();

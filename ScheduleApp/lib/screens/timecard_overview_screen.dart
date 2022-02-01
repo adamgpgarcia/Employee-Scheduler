@@ -4,11 +4,13 @@ import '../providers/schedules.dart';
 import '../providers/auth.dart';
 import '../screens/timecard_screen.dart';
 
+//this widget shows a brief glance at the time card and allows you to enter a edit page and view previous timedcards
 class TimecardOverviewScreen extends StatelessWidget {
   static const routeName = '/timecard-overview';
 
   @override
   Widget build(BuildContext context) {
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text("Timecard Overview"),
@@ -21,11 +23,10 @@ class TimecardOverviewScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     Navigator.of(context).pushNamed(TimeCardScreen.routeName);
-                     
                   },
-                                child: Container(
+                  child: Container(
                     color: Colors.grey,
                     width: 100,
                     height: 100,
@@ -33,22 +34,18 @@ class TimecardOverviewScreen extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                                child: Container(
-                                   color: Colors.grey,
+                  child: Container(
+                    color: Colors.grey,
                     width: 100,
                     height: 100,
                     child: Center(child: Text("Timecard History")),
                   ),
                 ),
-                
               ],
-
             ),
           ),
-          
-              Text("Scheduled hours Timeperiod"),
-              Text("Hours So Far"),
-        
+          Text("Scheduled hours Timeperiod"),
+          Text("Hours So Far"),
         ],
       ),
     );

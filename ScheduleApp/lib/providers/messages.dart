@@ -8,8 +8,7 @@ import 'dart:convert';
 //import 'package:http/http.dart' as http;
 //import 'dart:convert';
 
-
-
+//message class definition
 class MessageModel {
   final int messageID;
   final int chatID;
@@ -30,6 +29,7 @@ class MessageModel {
   });
 }
 
+//chat args class definition
 class ChatArguments {
   final int userId;
   int senderId;
@@ -37,13 +37,16 @@ class ChatArguments {
   ChatArguments(this.userId, this.senderId);
 }
 
+//messages provider
 class Messages with ChangeNotifier {
   List<MessageModel> _messageList = [];
 
+  //returns count of messages
   int get messageCount {
     return _messageList.length;
   }
 
+  //finds messages by user id and creates a list of all the messages in a thread
   List<MessageModel> findById(int userId, int senderId) {
     return _messageList.where((element) {
       return (element.receiverID == userId && element.senderID == senderId) ||
@@ -51,28 +54,27 @@ class Messages with ChangeNotifier {
     }).toList();
   }
 
-  int sharedMessages(int userId, int receipientId) {    
-     MessageModel sharedMessage;
-    for(int i = 0; i < _messageList.length; i ++){
-      if((_messageList[i].senderID == userId && _messageList[i].receiverID == receipientId) || (_messageList[i].receiverID == userId && _messageList[i].senderID == receipientId)){
+  //compiles list of messages between to users
+  int sharedMessages(int userId, int receipientId) {
+    MessageModel sharedMessage;
+    for (int i = 0; i < _messageList.length; i++) {
+      if ((_messageList[i].senderID == userId &&
+              _messageList[i].receiverID == receipientId) ||
+          (_messageList[i].receiverID == userId &&
+              _messageList[i].senderID == receipientId)) {
         sharedMessage = _messageList[i];
-        
+
         break;
       }
-      
     }
-    if(sharedMessage == null){
+    if (sharedMessage == null) {
       return null;
-    }else{
+    } else {
       return sharedMessage.chatID;
     }
-    
   }
 
-  
-
-  //deletes all messages from a certain user
-
+  //sorts messages by sent time
   List<MessageModel> getChatMessages(int id) {
     List tempMessages = [];
     tempMessages =
@@ -87,10 +89,12 @@ class Messages with ChangeNotifier {
   //   notifyListeners();
   // }
 
+  //returns list of messages
   List<MessageModel> get items {
     return [..._messageList]; // ... is the spread operator
   }
 
+  //checks if message is in list
   bool inList(MessageModel temp, List<MessageModel> tempList) {
     bool isIn = false;
     for (var message in tempList) {
@@ -101,6 +105,7 @@ class Messages with ChangeNotifier {
     return isIn;
   }
 
+  //returns a sorted list of messages
   List<MessageModel> inListNewer(
       MessageModel temp, List<MessageModel> tempList) {
     for (int i = 0; i < tempList.length; i++) {
@@ -113,6 +118,7 @@ class Messages with ChangeNotifier {
     return tempList;
   }
 
+  //returns last message to be used as a thumbnail for the chat thread
   MessageModel lastMessage(int chatNumber) {
     List<MessageModel> tempMessages = [];
     var last;
@@ -131,6 +137,7 @@ class Messages with ChangeNotifier {
     return last;
   }
 
+  //returns a list of open chats
   List<MessageModel> openChats(int currentUser) {
     List<MessageModel> chats = [];
 
@@ -147,6 +154,7 @@ class Messages with ChangeNotifier {
     return chats;
   }
 
+  //gets messages from the database
   Future<void> getMessages(String token) async {
     var headers = {
       'Content-Type': 'application/json',
@@ -178,6 +186,7 @@ class Messages with ChangeNotifier {
     }
   }
 
+  //creates a message in the database
   Future<void> sendMessage(MessageModel message, String token) async {
     var headers = {
       'Content-Type': 'application/json',
@@ -199,7 +208,8 @@ class Messages with ChangeNotifier {
         'message': message.message,
         'notification': message.notification,
       }),
-    ).then((response) {
+    )
+        .then((response) {
       final newMessage = MessageModel(
         messageID: json.decode(response.body)['id'],
         chatID: message.chatID,
@@ -217,5 +227,3 @@ class Messages with ChangeNotifier {
     });
   }
 }
-
-

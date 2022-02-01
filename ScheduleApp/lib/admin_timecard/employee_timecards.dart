@@ -6,10 +6,12 @@ import '../providers/employees.dart';
 import '../admin_timecard/single_view_timecard.dart';
 import '../admin_timecard/timecard_stats.dart';
 
+//this widget shows an overview of the current time periods timecard and its submission status.
 class EmployeeTimecards extends StatelessWidget {
   static const routeName = '/employee-timecards';
   @override
   Widget build(BuildContext context) {
+    //args contains a schedule object
     ScheduleModel args = ModalRoute.of(context).settings.arguments;
     var shift = Provider.of<Shifts>(context, listen: false);
     List<EmployeeAccount> listEmployees =
@@ -18,6 +20,7 @@ class EmployeeTimecards extends StatelessWidget {
     List<TimecardRecord> timecardRecords =
         shift.getRecords(args.scheduleID, listEmployees);
 
+    //formatting and styling s
     return Scaffold(
       appBar: AppBar(title: Text("Schedule: ${args.scheduleID}")),
       body: Column(

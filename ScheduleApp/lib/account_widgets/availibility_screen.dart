@@ -15,6 +15,7 @@ List<String> weekDays = [
   "Saturday"
 ];
 
+//this is the stateful widget for the availability screen
 class AvailibilityScreen extends StatefulWidget {
   static const routeName = '/change-availibility';
   @override
@@ -45,6 +46,7 @@ class _AvailibilityScreenState extends State<AvailibilityScreen> {
       }
     }
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,

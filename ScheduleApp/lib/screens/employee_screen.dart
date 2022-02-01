@@ -5,6 +5,7 @@ import '../providers/employees.dart';
 import 'package:provider/provider.dart';
 import '../employee_widgets/employee_form.dart';
 
+//this widget lists all employees and give an option to add a new employee
 class EmployeeScreen extends StatefulWidget {
   static const routeName = '/employee';
 
@@ -19,6 +20,8 @@ class _EmployeeScreenState extends State<EmployeeScreen> {
     var employee = Provider.of<Employees>(context);
     var employeeList = Provider.of<Employees>(context).items;
     var employeeCount = employee.employeeCount;
+
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text("Employee Record"),

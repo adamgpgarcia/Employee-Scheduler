@@ -10,6 +10,7 @@ import './screens/timecard_screen.dart';
 import './screens/timecard_overview_screen.dart';
 //import 'package:provider/provider.dart';
 
+//this is the navigation bar widget
 class Nav extends StatefulWidget {
   final int userID;
 
@@ -21,14 +22,6 @@ class Nav extends StatefulWidget {
 
 class _NavState extends State<Nav> {
   int _selectedIndex = 2;
-
-  // void _deleteTransaction(String id){
-  //     setState(() {
-  //       _userTransactions.removeWhere((tx) {
-  //         return tx.id == id;
-  //       });
-  //     });
-  // }
 
   void _onItemTap(int index) {
     setState(() {

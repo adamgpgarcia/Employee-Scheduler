@@ -6,18 +6,20 @@ import '../timecard_widgets/hour_viewer_admin.dart';
 import '../providers/auth.dart';
 import 'package:intl/intl.dart';
 
+//this is the full timecard view that shows days you worked/off with start and stop times, regular time and overtime are calculated accordingly.
 class SingleViewTimecards extends StatelessWidget {
   static const routeName = '/single-view-timecards';
   @override
   Widget build(BuildContext context) {
+    //args contains the timecard of the user
     TimecardRecord args = ModalRoute.of(context).settings.arguments;
     var shift = Provider.of<Shifts>(context, listen: false);
     var auth = Provider.of<Auth>(context, listen: false);
-
     var schedule = Provider.of<Schedules>(context, listen: false);
 
     ScheduleModel currentSchedule = schedule.getScheduleByID(args.scheduleID);
 
+    //this function checks if the employee works that day
     bool isWorking(TimeCard temp) {
       if (temp.shift.employeeID == 0) {
         return false;
@@ -32,6 +34,7 @@ class SingleViewTimecards extends StatelessWidget {
     List<TimeCard> userTimeCard = schedule.createTimeCard(shift, scheduleDays,
         args.user.employeeID); // schedule == shift provider
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
           title:

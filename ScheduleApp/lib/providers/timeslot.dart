@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'dart:convert';
 import 'dart:async';
 
+//timeslot class definition
 class TimeSlotModel {
   int id;
   int employeeID;
@@ -20,19 +21,23 @@ class TimeSlotModel {
       @required this.currentDay});
 }
 
+//timeslot provider
 class TimeSlots with ChangeNotifier {
   List<TimeSlotModel> _timeSlotList = [];
 
+  //returns timeslot list
   List<TimeSlotModel> get items {
     return [..._timeSlotList]; // ... is the spread operator
   }
 
+  //sorts list based on day
   List<TimeSlotModel> slotsByDay(String temp) {
     return _timeSlotList.where((element) {
       return (element.currentDay == temp);
     }).toList();
   }
 
+  //sorts list
   List<TimeSlotModel> sortedTimeSlots(int userID, String day) {
     List<TimeSlotModel> userTimeSlots = _timeSlotList
         .where((element) =>
@@ -44,6 +49,7 @@ class TimeSlots with ChangeNotifier {
     return userTimeSlots;
   }
 
+  //counts time slots
   double countSlots(int userID, String day) {
     List<TimeSlotModel> userTimeSlots = _timeSlotList
         .where((element) =>
@@ -58,6 +64,7 @@ class TimeSlots with ChangeNotifier {
     return temp;
   }
 
+  //gets timeslots from the database
   Future<void> getTimeSlots(String token) async {
     var headers = {
       'Content-Type': 'application/json',
@@ -88,6 +95,7 @@ class TimeSlots with ChangeNotifier {
     }
   }
 
+  //creates a timeslot in the database
   Future<void> setTimeSlot(TimeSlotModel slot, String token) async {
     var headers = {
       'Authorization': "token $token",
@@ -124,6 +132,7 @@ class TimeSlots with ChangeNotifier {
     //print(json.decode(response.body));
   }
 
+  //deletes a time slot in the database
   Future<void> deleteTimeSlot(int id, String token) async {
     var headers = {
       'Authorization': "token $token",

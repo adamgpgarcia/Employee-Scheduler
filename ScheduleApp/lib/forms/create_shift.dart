@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth.dart';
 import '../providers/employees.dart';
-
 import '../providers/shifts.dart';
 
+//this widget is a form to create a shift
 class ShiftForm extends StatefulWidget {
   static const routeName = '/shift-form';
   @override
@@ -42,6 +42,7 @@ class _ShiftFormState extends State<ShiftForm> {
     confirmed: false,
   );
 
+  //this function prompts the user with a date picker widget
   void _presentDatePicker() {
     showDatePicker(
       context: context,
@@ -60,6 +61,7 @@ class _ShiftFormState extends State<ShiftForm> {
     });
   }
 
+  //this function prompts the user with a date picker widget
   void _presentStartTimePicker() {
     showTimePicker(
       context: context,
@@ -76,6 +78,7 @@ class _ShiftFormState extends State<ShiftForm> {
     });
   }
 
+  //this function prompts the user with a date picker widget
   void _presentEndTimePicker() {
     showTimePicker(
       context: context,
@@ -101,6 +104,7 @@ class _ShiftFormState extends State<ShiftForm> {
     "Licensed Vocational Nurses",
   ];
 
+  //this function saves and validates the form
   void _saveForm() {
     final isValid = _form.currentState.validate();
     if (!isValid) {
@@ -145,10 +149,12 @@ class _ShiftFormState extends State<ShiftForm> {
     Navigator.of(context).pop();
   }
 
+  //this function formats the date to a format needed for the database
   DateTime correctDateTime(TimeOfDay day, DateTime date) {
     return DateTime(date.year, date.month, date.day, day.hour, day.minute);
   }
 
+  //this function formats the date to a format needed for the database
   DateTime correctDate(DateTime date) {
     return DateTime(date.year, date.month, date.day);
   }
@@ -160,6 +166,7 @@ class _ShiftFormState extends State<ShiftForm> {
     List<EmployeeAccount> employeeList =
         Provider.of<Employees>(context, listen: false).items;
 
+    //this if statement init the form
     if (initForm == false) {
       print("initing");
       if (args != null) {
@@ -190,6 +197,7 @@ class _ShiftFormState extends State<ShiftForm> {
       }
     }
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text("Create Shift"),

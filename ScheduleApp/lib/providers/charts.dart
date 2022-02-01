@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
+//chartmodel class definition
 class ChartModel {
   List<String> day;
   List<int> date;
@@ -13,6 +14,7 @@ class ChartModel {
   });
 }
 
+//chartmodel class definition
 class ChatModel {
   int chatID;
   List<int> recipients;

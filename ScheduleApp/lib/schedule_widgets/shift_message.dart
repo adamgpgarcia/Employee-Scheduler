@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../providers/shifts.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +7,7 @@ enum Reason { late, call_off, other }
 
 Reason status;
 
+//this widget allows an employee to message a supervisor about their shift call off, late,
 class ShiftMessage extends StatefulWidget {
   static const routeName = '/shift-message';
   @override
@@ -15,12 +15,14 @@ class ShiftMessage extends StatefulWidget {
 }
 
 class _ShiftMessageState extends State<ShiftMessage> {
+  //this functions sets reason
   void setReason(Reason temp) {
     setState(() {
       status = temp;
     });
   }
 
+  //returns id of current supervisor
   int currentSupervisor(
       DateTime dateShift, List<ShiftModel> schedules, var schedule) {
     for (int i = 0; i < schedules.length; i++) {
@@ -33,6 +35,7 @@ class _ShiftMessageState extends State<ShiftMessage> {
     return null;
   }
 
+  //formatting and styling
   @override
   Widget build(BuildContext context) {
     print(status);

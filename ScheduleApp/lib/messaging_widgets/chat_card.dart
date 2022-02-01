@@ -7,11 +7,13 @@ import '../providers/employees.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
+//this widget shows if you have a chat thread from a person, which you can click into
 class ChatCard extends StatelessWidget {
   final ChatModel currentChat;
 
   ChatCard(this.currentChat);
 
+  //this checks if sender is the current user
   bool isCurrentUser(int currentUser, int sender) {
     if (currentUser == sender) {
       return true;
@@ -51,6 +53,7 @@ class ChatCard extends StatelessWidget {
     var employees = Provider.of<Employees>(context, listen: false);
     var messages = Provider.of<Messages>(context, listen: false);
 
+    //formatting and styling
     return Container(
       width: width,
       child: Row(

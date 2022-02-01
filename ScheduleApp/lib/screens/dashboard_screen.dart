@@ -1,13 +1,13 @@
 import '../dashboard_widgets/user_dashboard.dart';
 import '../dashboard_widgets/admin_dashboard.dart';
 import 'package:flutter/material.dart';
-
 import '../providers/employees.dart';
 import '../providers/timeslot.dart';
 import '../providers/auth.dart';
 import '../providers/shifts.dart';
 import 'package:provider/provider.dart';
 
+//employee dashboard screen which shows a loading indicator
 class DashboardScreen extends StatefulWidget {
   @override
   _DashboardScreenState createState() => _DashboardScreenState();
@@ -28,12 +28,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
       setState(() {
         isLoading = true;
       });
-      print("before");
       Provider.of<Employees>(context, listen: false)
           .getEmployees(auth.token)
           .then((_) {
         setState(() {
-          print("yes");
           isLoading = false;
           isInIt = false;
         });
@@ -44,6 +42,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
     Provider.of<Shifts>(context, listen: false).getShifts(auth.token);
 
+    //formatting and style
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

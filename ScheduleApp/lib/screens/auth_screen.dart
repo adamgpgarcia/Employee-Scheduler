@@ -4,6 +4,7 @@ import '../providers/auth.dart';
 
 enum AuthMode { Signup, Login }
 
+//auth screen where user puts in username and password to gain token for the database
 class AuthScreen extends StatelessWidget {
   static const routeName = '/auth';
 
@@ -14,6 +15,7 @@ class AuthScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;
 
+    //formatting and styling
     return Scaffold(
       // resizeToAvoidBottomInset: false,
       body: Container(
@@ -72,6 +74,7 @@ class AuthScreen extends StatelessWidget {
   }
 }
 
+//this widget contains the username and password input fields
 class AuthCard extends StatefulWidget {
   const AuthCard({
     Key key,
@@ -108,6 +111,7 @@ class _AuthCardState extends State<AuthCard> {
     );
   }
 
+  //logins in
   Future<void> _submit() async {
     if (!_formKey.currentState.validate()) {
       // Invalid!
@@ -137,6 +141,7 @@ class _AuthCardState extends State<AuthCard> {
     });
   }
 
+  //formatting and styling
   @override
   Widget build(BuildContext context) {
     final deviceSize = MediaQuery.of(context).size;

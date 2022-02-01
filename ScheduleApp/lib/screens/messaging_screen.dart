@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../providers/chats.dart';
 import '../messaging_widgets/individual_chat.dart';
 
+//this widget shows the chat thread screen, and allows user to delete chat thread
 class MessagingScreen extends StatefulWidget {
   @override
   _MessagingScreenState createState() => _MessagingScreenState();
@@ -44,6 +45,7 @@ class _MessagingScreenState extends State<MessagingScreen> {
     List<ChatModel> currentChats =
         Provider.of<Chats>(context).openChats(auth.user);
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         actions: <Widget>[

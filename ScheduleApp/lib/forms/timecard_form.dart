@@ -5,6 +5,7 @@ import '../providers/employees.dart';
 import '../providers/schedules.dart';
 import '../providers/shifts.dart';
 
+//this widget is the timecard form
 class TimecardForm extends StatefulWidget {
   static const routeName = '/timecard-form';
   @override
@@ -46,6 +47,7 @@ class _TimecardFormState extends State<TimecardForm> {
     confirmed: false,
   );
 
+  //this function presents the user with a time picker
   void _presentStartTimePicker() {
     showTimePicker(
         context: context,
@@ -68,6 +70,7 @@ class _TimecardFormState extends State<TimecardForm> {
     });
   }
 
+  //this function presents the user with a time picker
   void _presentStartLunchPicker() {
     showTimePicker(
         context: context,
@@ -90,6 +93,7 @@ class _TimecardFormState extends State<TimecardForm> {
     });
   }
 
+  //this function presents the user with a time picker
   void _presentEndLunchPicker() {
     showTimePicker(
         context: context,
@@ -112,6 +116,7 @@ class _TimecardFormState extends State<TimecardForm> {
     });
   }
 
+  //this function presents the user with a time picker
   void _presentEndTimePicker() {
     showTimePicker(
         context: context,
@@ -135,6 +140,7 @@ class _TimecardFormState extends State<TimecardForm> {
     });
   }
 
+  //this function saves and validates the form
   void _saveForm() {
     final isValid = _form.currentState.validate();
     if (!isValid) {
@@ -174,6 +180,7 @@ class _TimecardFormState extends State<TimecardForm> {
     Navigator.of(context).pop();
   }
 
+  //this function formats the date to a format needed for the database
   DateTime correctDateTime(TimeOfDay day, DateTime date) {
     return DateTime(date.year, date.month, date.day, day.hour, day.minute);
   }
@@ -182,6 +189,7 @@ class _TimecardFormState extends State<TimecardForm> {
   Widget build(BuildContext context) {
     TimeCard args = ModalRoute.of(context).settings.arguments;
 
+    //this if statement init the form
     if (initForm == false) {
       setState(() {
         _shift.shiftID = args.shift.shiftID;
@@ -219,6 +227,7 @@ class _TimecardFormState extends State<TimecardForm> {
       });
     }
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text("Edit Shift"),

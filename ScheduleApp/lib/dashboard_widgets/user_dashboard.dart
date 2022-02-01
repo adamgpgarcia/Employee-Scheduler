@@ -3,9 +3,11 @@ import '../providers/shifts.dart';
 import '../providers/auth.dart';
 import 'package:flutter/material.dart';
 
+//this widget tells the user if they are scheduled to work today and when their next shift is.
 class UserDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //this function checks if null
     bool isNull(var temp) {
       if (temp == null) {
         return true;
@@ -19,6 +21,7 @@ class UserDashboard extends StatelessWidget {
 
     ShiftModel shiftToday = shift.shiftToday(DateTime.now(), auth.user);
 
+    //formatting and styling
     return Column(children: <Widget>[
       Padding(
         padding: const EdgeInsets.only(top: 28.0),

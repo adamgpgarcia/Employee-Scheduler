@@ -4,6 +4,7 @@ import '../providers/shifts.dart';
 import '../providers/schedules.dart';
 import 'package:intl/intl.dart';
 
+//this widget shows stats on timecards for the current period to the admin user, not implemented
 class TimecardStats extends StatelessWidget {
   final List<TimecardRecord> timecardRecords;
   final ScheduleModel currentSchedule;
@@ -17,6 +18,7 @@ class TimecardStats extends StatelessWidget {
   double totalOT2 = 0;
   int lunchViolatios = 0;
 
+  //this function counts the submitted and outstanding timecards
   void submittedCheck(List<TimecardRecord> list) {
     for (var item in list) {
       if (item.submitted == true) {
@@ -27,6 +29,7 @@ class TimecardStats extends StatelessWidget {
     }
   }
 
+  //this function adds up total reg, over, and double time from all employees that have submitted their time cards
   void totalTimes(var shift, List<TimecardRecord> timecardRecords) {
     List<TimeCard> temp = [];
     TimecardCalculations tempCalculations;
@@ -41,9 +44,9 @@ class TimecardStats extends StatelessWidget {
       // for(int k = 0; k < temp.length; k++){
       tempCalculations = shift.timeCalculationsAdmin(
           shift, timecardRecords[i].user.employeeID, temp);
-      print(tempCalculations.regTime);
-      print(tempCalculations.overTime);
-      print(tempCalculations.doubleTime);
+      //print(tempCalculations.regTime);
+      //print(tempCalculations.overTime);
+      //print(tempCalculations.doubleTime);
 
       totalRegular += tempCalculations.regTime;
       totalOT += tempCalculations.overTime;
@@ -54,6 +57,7 @@ class TimecardStats extends StatelessWidget {
     }
   }
 
+  //formatting and styling
   @override
   Widget build(BuildContext context) {
     var schedule = Provider.of<Schedules>(context, listen: false);

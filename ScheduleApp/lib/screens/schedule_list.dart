@@ -7,6 +7,7 @@ import '../forms/create_schedule.dart';
 import '../admin_schedule/schedule_info.dart';
 import 'package:intl/intl.dart';
 
+//this widget shows a list of all the schedules that have been made and gives the option to create, edit and delete a schedule
 class ScheduleList extends StatelessWidget {
   static const routeName = '/schedule-list';
   @override
@@ -19,6 +20,7 @@ class ScheduleList extends StatelessWidget {
 
     List<ScheduleModel> schedule = Provider.of<Schedules>(context).items;
 
+    //formatting and scheduling
     return Scaffold(
       appBar: AppBar(
         title: Text('Schedules'),

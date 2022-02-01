@@ -4,6 +4,7 @@ import '../providers/auth.dart';
 import '../providers/employees.dart';
 import '../providers/timeslot.dart';
 
+//This stateful widget promts the user with a form where they can change their availability based on day
 class AvailabilityForm extends StatefulWidget {
   final String day;
   AvailabilityForm(this.day);
@@ -25,6 +26,7 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
 
   DateTime temp = DateTime.now();
 
+  //slot is empty by default
   TimeSlotModel _slot = TimeSlotModel(
       id: null,
       employeeID: null,
@@ -32,6 +34,7 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
       endTime: null,
       currentDay: null);
 
+  //void function presents user with built in widget to select time
   void _presentStartTimePicker() {
     showTimePicker(
         context: context,
@@ -45,6 +48,7 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
       if (pickedTime == null) {
         return;
       }
+      //alters state
       setState(() {
         _selectedStartTime = pickedTime;
         _startTimeController.value = TextEditingValue(
@@ -54,6 +58,7 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
     });
   }
 
+  //void function presents user with built in widget to select time
   void _presentEndTimePicker() {
     showTimePicker(
         context: context,
@@ -67,6 +72,7 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
       if (pickedTime == null) {
         return;
       }
+      //alters state
       setState(() {
         _selectedEndTime = pickedTime;
 
@@ -77,7 +83,9 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
     });
   }
 
+  //void function to validate and save availability form
   void saveAvailabilityForm() {
+    //checks if form is validate
     final isValid = _form.currentState.validate();
     if (!isValid) {
       return;
@@ -85,7 +93,6 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
 
     _form.currentState.save();
 
-    print("thatWorked");
     var auth = Provider.of<Auth>(context);
 
     _slot = TimeSlotModel(
@@ -97,22 +104,24 @@ class _AvailabilityFormState extends State<AvailabilityForm> {
 
     Provider.of<TimeSlots>(context).setTimeSlot(_slot, auth.token);
 
-    print(_slot.employeeID);
-    print(_slot.startTime);
-    print(_slot.endTime);
-    print(_slot.currentDay);
-    print(_slot.employeeID.runtimeType);
-    print(_slot.startTime.runtimeType);
-    print(_slot.endTime.runtimeType);
-    print(_slot.currentDay.runtimeType);
+    // print(_slot.employeeID);
+    // print(_slot.startTime);
+    // print(_slot.endTime);
+    // print(_slot.currentDay);
+    // print(_slot.employeeID.runtimeType);
+    // print(_slot.startTime.runtimeType);
+    // print(_slot.endTime.runtimeType);
+    // print(_slot.currentDay.runtimeType);
 
     Navigator.of(context).pop();
   }
 
+  //function breaks down date into the needed format
   DateTime correctDateTime(TimeOfDay day, DateTime date) {
     return DateTime(date.year, date.month, date.day, day.hour, day.minute);
   }
 
+  //formatting and styling of widget
   @override
   Widget build(BuildContext context) {
     var employees = Provider.of<Employees>(context, listen: false);

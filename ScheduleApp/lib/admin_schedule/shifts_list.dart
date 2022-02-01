@@ -6,6 +6,7 @@ import '../providers/employees.dart';
 import 'package:intl/intl.dart';
 import '../forms/create_shift.dart';
 
+//this widget creates a list of shifts on current day. Admin can add new shifts or edit/delete current ones
 class ShiftsList extends StatelessWidget {
   static const routeName = '/shifts-list';
   @override
@@ -14,8 +15,11 @@ class ShiftsList extends StatelessWidget {
     var auth = Provider.of<Auth>(context, listen: false);
     var width = screenSize.width;
     var employee = Provider.of<Employees>(context, listen: false);
+
+    //passes dates from last widget with modelroute args
     DateTime args = ModalRoute.of(context).settings.arguments;
 
+    //this code gets a list of all the shifts on the current day
     List<ShiftModel> shifts = Provider.of<Shifts>(context).getShiftsOnDay(args);
 
     bool isNull(temp) {
@@ -26,6 +30,7 @@ class ShiftsList extends StatelessWidget {
       }
     }
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text(

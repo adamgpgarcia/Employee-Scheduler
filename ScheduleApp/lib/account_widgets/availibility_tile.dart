@@ -3,11 +3,13 @@ import 'package:provider/provider.dart';
 import '../providers/auth.dart';
 import '../providers/timeslot.dart';
 
+//This widget displays employee schedule availability based on day of the week
 class AvailabilityTile extends StatelessWidget {
   int user;
   String day;
   AvailabilityTile(this.user, this.day);
 
+  //function checks if temp is null
   bool isNull(var temp) {
     if (temp == null) {
       return true;
@@ -16,10 +18,13 @@ class AvailabilityTile extends StatelessWidget {
     }
   }
 
+  //formatting and styling of widget
   @override
   Widget build(BuildContext context) {
+    //gets Auth key from Auth Provider
     var auth = Provider.of<Auth>(context);
     var timeSlots = Provider.of<TimeSlots>(context, listen: false);
+    //gets time slots of employee from database
     timeSlots.getTimeSlots(auth.token);
     List<TimeSlotModel> userTimeSlots =
         Provider.of<TimeSlots>(context, listen: false)

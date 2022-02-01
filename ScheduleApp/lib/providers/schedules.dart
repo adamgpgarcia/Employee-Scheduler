@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+//schedule class definition
 class ScheduleModel {
   int scheduleID;
   int companyID;
@@ -23,6 +24,7 @@ class ScheduleModel {
   });
 }
 
+//timecard class definition
 class TimeCard {
   DateTime day;
   ShiftModel shift;
@@ -33,6 +35,7 @@ class TimeCard {
   });
 }
 
+//timecard record class definiton
 class TimecardRecord {
   int scheduleID;
   bool submitted;
@@ -47,6 +50,7 @@ class TimecardRecord {
   });
 }
 
+//timecard calculations class definition
 class TimecardCalculations {
   int employeeID;
   double regTime;
@@ -63,13 +67,16 @@ class TimecardCalculations {
   });
 }
 
+//schedule provider
 class Schedules with ChangeNotifier {
   List<ScheduleModel> _scheduleList = [];
 
+  //returns list of schedules
   List<ScheduleModel> get items {
     return [..._scheduleList]; // ... is the spread operator
   }
 
+  //returns schedule by id
   ScheduleModel getScheduleByID(int id) {
     for (var item in _scheduleList) {
       if (item.scheduleID == id) {
@@ -79,6 +86,7 @@ class Schedules with ChangeNotifier {
     return null;
   }
 
+  //gets the list of schedules from the database
   Future<void> getSchedule(String token) async {
     var headers = {
       'Content-Type': 'application/json',
@@ -108,6 +116,7 @@ class Schedules with ChangeNotifier {
     }
   }
 
+  //updates a schedule in the database
   Future<void> updateSchedule(
       ScheduleModel schedule, int id, String token) async {
     var headers = {
@@ -141,6 +150,7 @@ class Schedules with ChangeNotifier {
     }
   }
 
+  //deletes a schedule from the database
   Future<void> deleteSchedule(
       ScheduleModel schedule, int id, String token) async {
     var headers = {
@@ -163,6 +173,7 @@ class Schedules with ChangeNotifier {
     }
   }
 
+  //checks if dates are on the same day
   bool sameDay(DateTime first, DateTime second) {
     if ((int.parse(DateFormat.d().format(first)) ==
             int.parse(DateFormat.d().format(second))) &&
@@ -173,6 +184,7 @@ class Schedules with ChangeNotifier {
     return false;
   }
 
+  //returns current schedule based on date
   ScheduleModel getCurrentSchedule() {
     DateTime now = DateTime.now();
     ScheduleModel temp;
@@ -185,6 +197,7 @@ class Schedules with ChangeNotifier {
     return temp;
   }
 
+  //creates timecard
   List<TimeCard> createTimeCard(
       var shift, List<DateTime> schedule, int userID) {
     List<TimeCard> tempTimeCard = [];
@@ -195,6 +208,7 @@ class Schedules with ChangeNotifier {
     return tempTimeCard;
   }
 
+  //gets dates for each day in the schedule
   List<DateTime> getScheduleDays(DateTime start, DateTime end) {
     List<DateTime> scheduleDays = [];
     Duration difference = end.difference(start);
@@ -207,6 +221,7 @@ class Schedules with ChangeNotifier {
     return scheduleDays;
   }
 
+  //gets the duedate of timecard from current schedule
   DateTime getDueDate(int scheduleID) {
     for (var item in _scheduleList) {
       if (item.scheduleID == scheduleID) {
@@ -215,6 +230,7 @@ class Schedules with ChangeNotifier {
     }
   }
 
+  //creates schedule in the database
   Future<void> setSchedule(ScheduleModel schedule, String token) async {
     var headers = {
       'Authorization': "token $token",

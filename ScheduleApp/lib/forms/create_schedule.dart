@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth.dart';
-
 import '../providers/schedules.dart';
 
+//this widget is a form to create a schedule
 class ScheduleForm extends StatefulWidget {
   static const routeName = '/schedule-form';
   @override
@@ -32,6 +32,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
     timecardDue: null,
   );
 
+  //this function prompts the user with a date picker widget
   void _presentStartDatePicker() {
     showDatePicker(
       context: context,
@@ -50,6 +51,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
     });
   }
 
+  //this function prompts the user with a date picker widget
   void _presentEndDatePicker() {
     showDatePicker(
       context: context,
@@ -68,6 +70,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
     });
   }
 
+  //this function prompts the user with a date picker widget
   void _presentDueDatePicker() {
     showDatePicker(
       context: context,
@@ -86,6 +89,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
     });
   }
 
+  //this function saves and validates the form
   void _saveForm() {
     final isValid = _form.currentState.validate();
     if (!isValid) {
@@ -116,10 +120,12 @@ class _ScheduleFormState extends State<ScheduleForm> {
     Navigator.of(context).pop();
   }
 
+  //this function formats the date to a format needed for the database
   DateTime correctDateTime(TimeOfDay day, DateTime date) {
     return DateTime(date.year, date.month, date.day, day.hour, day.minute);
   }
 
+  //this function formats the date to a format needed for the database
   DateTime correctDate(DateTime date) {
     return DateTime(date.year, date.month, date.day);
   }
@@ -128,6 +134,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
   Widget build(BuildContext context) {
     ScheduleModel args = ModalRoute.of(context).settings.arguments;
 
+    //this if statement inits the form
     if (initForm == false) {
       print("initing");
       if (args != null) {
@@ -152,6 +159,7 @@ class _ScheduleFormState extends State<ScheduleForm> {
       }
     }
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text("Create Schedule"),

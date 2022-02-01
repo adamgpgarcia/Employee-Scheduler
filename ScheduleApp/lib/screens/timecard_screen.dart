@@ -8,6 +8,7 @@ import '../timecard_widgets/hour_viewer.dart';
 import '../timecard_widgets/timecard_card_off.dart';
 import '../timecard_widgets/timecard_card_working.dart';
 
+//this widget shows a detailed breakdown of current timecard and allows the user to submit timecard
 class TimeCardScreen extends StatefulWidget {
   static const routeName = '/timecard-screen';
 
@@ -61,6 +62,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
     List<TimeCard> userTimeCard = schedules.createTimeCard(
         schedule, scheduleDays, auth.user); // schedule == shift provider
 
+    //checks if employee is working
     bool areYouWorking(userTimeCard) {
       if (userTimeCard.shift.employeeID == 0) {
         return false;
@@ -68,6 +70,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
       return true;
     }
 
+    //checks if timecard is submitted
     bool timeCardSubmitted() {
       for (int i = 0; i < userShifts.length; i++) {
         if (userShifts[i].confirmed == true) {
@@ -77,6 +80,7 @@ class _TimeCardScreenState extends State<TimeCardScreen> {
       return false;
     }
 
+    //formatting and styling
     return Scaffold(
         appBar: AppBar(
           elevation: 0,

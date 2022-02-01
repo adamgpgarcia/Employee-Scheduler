@@ -12,6 +12,7 @@ import 'package:date_util/date_util.dart';
 
 //import './chart.dart';
 
+//this widget shows a weekly glance at the current schedule with all the shifts per day for an employee to view
 class ScheduleScreen extends StatefulWidget {
   @override
   _ScheduleScreenState createState() => _ScheduleScreenState();
@@ -280,6 +281,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
     List<ShiftModel> weekSchedule =
         schedule.weeksSchedules(userShifts, listOfDates, curMonth, filter);
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         elevation: 0,

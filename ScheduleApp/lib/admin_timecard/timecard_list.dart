@@ -6,19 +6,18 @@ import '../providers/auth.dart';
 import 'package:intl/intl.dart';
 import '../admin_timecard/employee_timecards.dart';
 
+//this widget lists all the timecards that have been submitted to the admin user
 class TimecardList extends StatelessWidget {
   static const routeName = '/timecard-list';
 
   @override
   Widget build(BuildContext context) {
     var auth = Provider.of<Auth>(context);
-
     var shiftP = Provider.of<Shifts>(context, listen: false);
-
     Provider.of<Schedules>(context).getSchedule(auth.token);
-
     List<ScheduleModel> schedule = Provider.of<Schedules>(context).items;
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(
         title: Text("Timecard Record"),

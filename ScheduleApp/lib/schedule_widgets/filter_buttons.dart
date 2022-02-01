@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//this widget allows the user to filters shifts on the schedule viewer page, all, me, pickup shift
 class FilterButtons extends StatefulWidget {
   int filter;
   Function setFilter;

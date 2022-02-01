@@ -5,6 +5,7 @@ import '../providers/auth.dart';
 import '../providers/employees.dart';
 import 'package:email_validator/email_validator.dart';
 
+//this widget is a form to add new employees to the database
 class EmployeeForm extends StatefulWidget {
   static const routeName = '/employee-form';
 
@@ -52,6 +53,7 @@ class _EmployeeFormState extends State<EmployeeForm> {
   };
   EmployeeAccount initEmployee;
 
+  //this function stores the user input from the form
   @override
   void didChangeDependencies() {
     if (_isInit) {
@@ -83,6 +85,7 @@ class _EmployeeFormState extends State<EmployeeForm> {
     super.didChangeDependencies();
   }
 
+  //this function saves and validates the form
   void _saveForm() {
     final isValid = _form.currentState.validate();
     if (!isValid) {
@@ -143,6 +146,7 @@ class _EmployeeFormState extends State<EmployeeForm> {
     Navigator.of(context).pop();
   }
 
+  //this function checks if null
   bool isNull(var variable) {
     if (variable != null) {
       return false;
@@ -151,6 +155,7 @@ class _EmployeeFormState extends State<EmployeeForm> {
     }
   }
 
+  //formatting and styling
   @override
   Widget build(BuildContext context) {
     EmployeeAccount args = ModalRoute.of(context).settings.arguments;

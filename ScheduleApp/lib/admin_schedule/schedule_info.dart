@@ -5,17 +5,23 @@ import '../providers/shifts.dart';
 import '../admin_schedule/shifts_list.dart';
 import 'package:intl/intl.dart';
 
+//widget for a button to gain more info for a particular schedule
 class ScheduleInfo extends StatelessWidget {
   static const routeName = '/schedule-info';
 
   @override
   Widget build(BuildContext context) {
+    //passes start and end of scheduling period as modal route args
     ScheduleModel args = ModalRoute.of(context).settings.arguments;
+
+    //provider var that can be dot referenced to gain access to their functions
     var shift = Provider.of<Shifts>(context, listen: false);
     var schedule = Provider.of<Schedules>(context, listen: false);
+    //creates a list of all the days that are in this scheduling period
     List<DateTime> scheduleDays =
         schedule.getScheduleDays(args.startPeriod, args.endPeriod);
 
+    //formatting and styling
     return Scaffold(
       appBar: AppBar(title: Text("Schedule Info")),
       body: ListView.builder(

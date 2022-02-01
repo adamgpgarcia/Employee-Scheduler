@@ -7,6 +7,7 @@ import '../screens/employee_screen.dart';
 
 import '../screens/schedule_list.dart';
 
+//this widget promts the admin with buttons that redirct to timecards, scheduling, and employees pages
 class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

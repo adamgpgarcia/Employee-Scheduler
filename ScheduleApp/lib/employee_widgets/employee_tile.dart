@@ -4,6 +4,7 @@ import '../screens/single_employee_screen.dart';
 import '../providers/employees.dart';
 import './employee_form.dart';
 
+//this widget displays the employee name with their id number, pressing on the widget directs the user to the employee profile
 class EmployeeTile extends StatelessWidget {
   final EmployeeAccount employeeAccount;
   EmployeeTile(this.employeeAccount);
