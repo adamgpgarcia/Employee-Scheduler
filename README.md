@@ -65,7 +65,10 @@ int foo() {
 </div>
 
 <p align="right">
-![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
+
+</p>
+<p align="center">
+  <img src="![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)" />
 </p>
 
 ![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)
