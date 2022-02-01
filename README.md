@@ -64,12 +64,28 @@ int foo() {
 ![image4](https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png)</div>
 </div>
 
-<p align="right">
 
-</p>
-<p align="right">
+
+<div class="row">
+  <div class="column">
+    <p align="Left>
+        <p>This is a paragraph.</p>
+    </p>
+  </div>
+  <div class="column"><p align="right">
   <img src="https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png" />
 </p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
 
 <div class="row">
   <div class="column">The image to the right</div>
