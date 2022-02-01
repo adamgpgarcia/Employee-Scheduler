@@ -67,8 +67,7 @@ int foo() {
 
 
 <div class="row">
-  <div class="column">
-    <p align="left>
+  <div class="column"><p align="left">
         This is a paragraph.
     </p>
   </div>
