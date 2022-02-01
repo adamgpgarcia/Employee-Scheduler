@@ -17,6 +17,13 @@ Django Database / Rest Api Application
 * **cd /var/www/html/RestApi/src**
 * **sudo python3 manage.py runserver 0.0.0.0:8000**
 
+<style>
+.center {
+  text-align: center;
+}
+</style>
+
+
 <div style="-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; -webkit-column-rule: 1px dotted #e0e0e0; -moz-column-rule: 1px dotted #e0e0e0; column-rule: 1px dotted #e0e0e0;">
     <div style="display: inline-block;">
         <h2>Good</h2>
@@ -67,7 +74,7 @@ int foo() {
 
 
 <div class="row">
-  <div class="column"><p align="left">
+  <div class="center"><p align="left">
         This is a paragraph.
     </p>
   </div>
