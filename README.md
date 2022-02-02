@@ -1,31 +1,25 @@
 
-<head>
-<style>
-.center {
-  text-align: center;
-  border: 3px solid green;
-}
-</style>
-</head>
+<h1 align="center">Casa Colina Employee Scheduler</h1>
+<h3 align="center">Fall 2020 Senior Capstone</h3>
 
-# Adam Garcia Fall 2020
-## Senior Capstone - Casa Colina Employee Scheduler 
 
-Front End 
+### Overview
 
-Flutter application Steps to run
-* **Open ScheduleApp folder**
-* **Fluter APK installed**
-* **Google APK installed**
-* **Run Android Emulator**
+The goal of this project is to create an employee scheduling platform that will streamline all tasks involving employee scheduling. Allow a company the able to update/post schedules, communicate with employees, accept timecard submissions remotely and automatically. All while increasing efficiency and eliminating human error.
 
-Backend End
 
-Django Database / Rest Api Application 
-* **Open Google Cloud account** 
-* **Navigate to Alpache Server directory** 
-* **cd /var/www/html/RestApi/src**
-* **sudo python3 manage.py runserver 0.0.0.0:8000**
+### Motivation
+
+Two out of three of my last employers did not use database driven scheduling systems. Using basic methods always resulted in human error. Employees would be over scheduled, under scheduled, delays int getting schedules out. This not only affected the employers but the also the morale of employees.
+
+### Codebase
+
+Android Application: Flutter Application
+Database Framework: Django REST Api
+Database SQL: SQLite
+Hosted: Google Cloud, Apache HTTP Server
+Languages: Dart, Python, SQLite
+
 
 <h2 align="center">Entity Relationship Diagram</h2>
 
@@ -34,6 +28,10 @@ Django Database / Rest Api Application
 </p>
 
 <br clear="left"/>
+
+
+<h2 align="center">Flutter App Examples</h2>
+
 <br/><br/>
 
 <img src="https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png" align="left" width="200px"/>
