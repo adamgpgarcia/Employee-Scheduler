@@ -92,6 +92,21 @@ int foo() {
 
 
 
+
+<img src="https://user-images.githubusercontent.com/25330599/152046452-498a5693-f172-40c8-b1a9-caeca9f797e2.png" align="right" width="200px"/>
+
+## Admin Dashboard Screen
+
+    - This screen shows the open chat threads
+
+    - Users can navigate to a open thread or start a new one
+    
+    - Threads have the last message displyed with date 
+    
+    - User initials fill in their avatar circle 
+
+<br clear="left"/>
+
 <img src="https://user-images.githubusercontent.com/25330599/152046466-80d175ef-2da7-4d62-b881-391aefb21ca0.png" align="left" width="200px"/>
 
 ## WorkChat Screen
@@ -106,7 +121,6 @@ int foo() {
 
 <br clear="left"/>
 
-A "newline". This text doesn't float anymore, is left-aligned.
 
 
 
