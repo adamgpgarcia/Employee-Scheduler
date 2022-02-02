@@ -12,7 +12,7 @@ The goal of this project is to create an employee scheduling platform that will 
 
 Two out of three of my last employers did not use database driven scheduling systems. Using basic methods always resulted in human error. Employees would be over scheduled, under scheduled, delays int getting schedules out. This not only affected the employers but the also the morale of employees.
 
-### Codebase
+### Frontend & Backend
 
 - Android Application: Flutter Application
 - Database Framework: Django REST Api
