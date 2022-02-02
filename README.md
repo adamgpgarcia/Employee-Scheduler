@@ -34,7 +34,7 @@ Django Database / Rest Api Application
 
 <img src="https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png" align="left" width="200px"/>
 
-## Admin Dashboard Screen
+## Login Screen
 
     - This screen shows the open chat threads
 
@@ -152,7 +152,7 @@ Django Database / Rest Api Application
 <br clear="left"/>
 <br/><br/>
     
-<img src="https://user-images.githubusercontent.com/25330599/152046484-cfa3aeaa-4213-4203-8d01-cfe98f5296db.png" align="left" width="200px"/>
+<img src="https://user-images.githubusercontent.com/25330599/152211075-a51e8be8-7384-4923-b5ad-fbbdc30d13d5.png" align="left" width="200px"/>
 
 ## Admin Single Timecard Review Screen
 
