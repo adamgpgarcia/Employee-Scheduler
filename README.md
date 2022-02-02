@@ -196,18 +196,8 @@ Django Database / Rest Api Application
 
 <br clear="left"/>
 <br/><br/>
-
-<p align="center">
- 
   
 <h2 align="center">Entity Relationship Diagram</h2>
-
-<span style="display:block;text-align:center">https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg</span>
-
-
-<img src="https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg" width="700px"/>
-  
-</p>
 
 <p align="center">
   <img width="700" src="https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg">
