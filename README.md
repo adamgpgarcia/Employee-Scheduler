@@ -93,7 +93,7 @@ int foo() {
 
 
 <img src="https://user-images.githubusercontent.com/25330599/152046466-80d175ef-2da7-4d62-b881-391aefb21ca0.png" align="left" width="300px"/>
- <p>There wasn't a whole lot he could do at that moment. He played the situation again and again in his head looking at what he might have done differently to make the situation better. No matter how many times he relived the situation in his head, there was never really a good alternative course of action. There simply wasn't a whole lot he could have done in that particular moment.</p>
+ <p style="text-align:center;">There wasn't a whole lot he could do at that moment. He played the situation again and again in his head looking at what he might have done differently to make the situation better. No matter how many times he relived the situation in his head, there was never really a good alternative course of action. There simply wasn't a whole lot he could have done in that particular moment.</p>
 
 <br clear="left"/>
 
