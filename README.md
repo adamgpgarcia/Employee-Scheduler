@@ -36,13 +36,13 @@ Django Database / Rest Api Application
 
 ## Login Screen
 
-    - This screen shows the open chat threads
+    - This screen has a username and password text fields 
 
-    - Users can navigate to a open thread or start a new one
+    - User is promted if password or login is wrong
     
-    - Threads have the last message displyed with date 
+    - If no response from the database is received a promt "cannot connect at this time" is given
     
-    - User initials fill in their avatar circle 
+    - If username and password is correct an authentication token returned
 
 <br clear="left"/>
 <br/><br/>
@@ -51,28 +51,26 @@ Django Database / Rest Api Application
 
 ## Schedule Viewer Screen
 
-    - This screen shows the open chat threads
+    - This screen gives a weekly view at current and future schedules 
 
-    - Users can navigate to a open thread or start a new one
+    - Shifts can be filtered by All, Personal, and Pick-up shifts
     
-    - Threads have the last message displyed with date 
+    - Released shifts show up in the pick-up option and can be picked up
     
-    - User initials fill in their avatar circle 
+    - At a quick glance white bars signify days you are scheduled to work  
 
 <br clear="left"/>
 <br/><br/>
 
 <img src="https://user-images.githubusercontent.com/25330599/152046484-cfa3aeaa-4213-4203-8d01-cfe98f5296db.png" align="left" width="200px"/>
 
-## Availibility Screen
+## Schedule Availability Screen
 
-    - This screen shows the open chat threads
+    - This screen allows employees to update their schedule availability
 
-    - Users can navigate to a open thread or start a new one
+    - Times can be add, editied, and deleted 
     
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
+    - Employees can only be scheduled for a shift when their availability allows
 
 <br clear="left"/>
 <br/><br/>
