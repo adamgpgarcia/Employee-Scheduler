@@ -14,11 +14,11 @@ Two out of three of my last employers did not use database driven scheduling sys
 
 ### Codebase
 
-Android Application: Flutter Application
-Database Framework: Django REST Api
-Database SQL: SQLite
-Hosted: Google Cloud, Apache HTTP Server
-Languages: Dart, Python, SQLite
+- Android Application: Flutter Application
+- Database Framework: Django REST Api
+- Database SQL: SQLite
+- Hosted: Google Cloud, Apache HTTP Server
+- Languages: Dart, Python, SQLite
 
 
 <h2 align="center">Entity Relationship Diagram</h2>
