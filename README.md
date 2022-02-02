@@ -96,8 +96,9 @@ int foo() {
 
 ## Messaging Screen
 
--This screen shows the open chat threads
--Users can navigate to a open thread or start a new one 
+- This screen shows the open chat threads
+
+- Users can navigate to a open thread or start a new one 
 
 <br clear="left"/>
 
