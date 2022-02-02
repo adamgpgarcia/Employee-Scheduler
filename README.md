@@ -93,12 +93,16 @@ int foo() {
 
 
 <img src="https://user-images.githubusercontent.com/25330599/152046466-80d175ef-2da7-4d62-b881-391aefb21ca0.png" align="left" width="300px"/>
-
-##    Messaging Screen
-
+<br/><br/>
+#WorkChat Screen
+<br/><br/>
     - This screen shows the open chat threads
 
-    - Users can navigate to a open thread or start a new one 
+    - Users can navigate to a open thread or start a new one
+    
+    - Threads have the last message displyed with date 
+    
+    - User initials fill in their avatar circle 
 
 <br clear="left"/>
 
