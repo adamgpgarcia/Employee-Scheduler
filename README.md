@@ -12,6 +12,14 @@ The goal of this project is to create an employee scheduling platform that will 
 
 Two out of three of my last employers did not use database driven scheduling systems. Using basic methods always resulted in human error. Employees would be over scheduled, under scheduled, delays int getting schedules out. This not only affected the employers but the also the morale of employees.
 
+## Poster
+
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/25330599/152237113-0bae78b0-7675-4bea-8add-c16434e4defb.jpg">
+</p>
+
+
+
 ### Frontend & Backend
 
 - Android Application: Flutter Application
