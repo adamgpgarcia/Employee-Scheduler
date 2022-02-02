@@ -27,7 +27,11 @@ Django Database / Rest Api Application
 * **cd /var/www/html/RestApi/src**
 * **sudo python3 manage.py runserver 0.0.0.0:8000**
 
+<h2 align="center">Entity Relationship Diagram</h2>
 
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg">
+</p>
 
 <br clear="left"/>
 <br/><br/>
@@ -36,13 +40,13 @@ Django Database / Rest Api Application
 
 ## Login Screen
 
-    - This screen has a username and password text fields 
+    - This screen logs in a user into the database with a username and password
 
     - User is promted if password or login is wrong
     
     - If no response from the database is received a promt "cannot connect at this time" is given
     
-    - If username and password is correct an authentication token returned
+    - If username and password is correct an authentication token is returned
 
 <br clear="left"/>
 <br/><br/>
@@ -68,7 +72,9 @@ Django Database / Rest Api Application
 
     - This screen allows employees to update their schedule availability
 
-    - Times can be add, editied, and deleted 
+    - Times can be add, editied, and deleted
+    
+    - Multiple time brackets can be added to one day
     
     - Employees can only be scheduled for a shift when their availability allows
 
@@ -79,13 +85,13 @@ Django Database / Rest Api Application
 
 ## Timecard Screen
 
-    - This screen shows the open chat threads
-
-    - Users can navigate to a open thread or start a new one
+    - This screen displays the users clocked hours for the schedule period 
     
-    - Threads have the last message displyed with date 
+    - When an employee is scheduled they are allowed to update start and end times and add lunch breaks 
     
-    - User initials fill in their avatar circle 
+    - Total, Regular, Overtime 1 (8 >), and Overtime 2 (12 >) hours are calculated and displayed 
+    
+    - Minutes are rounded to the next 15 minute increment 
 
 <br clear="left"/>
 <br/><br/>
@@ -94,7 +100,7 @@ Django Database / Rest Api Application
 
 ## WorkChat Screen
 
-    - This screen shows the open chat threads
+    - This screen shows a users open chat threads
 
     - Users can navigate to a open thread or start a new one
     
@@ -109,14 +115,12 @@ Django Database / Rest Api Application
 
 ## Single Chat Screen
 
-    - This screen shows the open chat threads
+    - This screen shows a single chat thread
 
-    - Users can navigate to a open thread or start a new one
+    - Messages are color coated based on sender and receiver
     
-    - Threads have the last message displyed with date 
+    - Messages are time stamped with date and time
     
-    - User initials fill in their avatar circle 
-
 <br clear="left"/>
 <br/><br/>
 
@@ -124,13 +128,7 @@ Django Database / Rest Api Application
 
 ## Admin Dashboard Screen
 
-    - This screen shows the open chat threads
-
-    - Users can navigate to a open thread or start a new one
-    
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
+    - This screen provides admin navigaton to employees, schedules, and timecards  
 
 <br clear="left"/>
 <br/><br/>
@@ -139,13 +137,11 @@ Django Database / Rest Api Application
 
 ## Admin Timecard Review Screen
 
-    - This screen shows the open chat threads
+    - This screen gives admin a quick glance at the remaining outstanding timecards 
 
-    - Users can navigate to a open thread or start a new one
+    - Current status of an individual timecard can be accessed with the view button
     
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
+    - Schedule time period and timecard due date are displayed
 
 <br clear="left"/>
 <br/><br/>
@@ -154,13 +150,11 @@ Django Database / Rest Api Application
 
 ## Admin Single Timecard Review Screen
 
-    - This screen shows the open chat threads
+    - This screen gives an overview of a single timecard
 
-    - Users can navigate to a open thread or start a new one
+    - Total, Regular, Overtime 1 (8 >), and Overtime 2 (12 >) hours are calculated and displayed
     
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
+    - If timecards are not satisfactory they can be returned to the employee
 
 <br clear="left"/>
 <br/><br/>
@@ -169,13 +163,11 @@ Django Database / Rest Api Application
 
 ## Admin Schedule Creation Screen
 
-    - This screen shows the open chat threads
+    - This screen allows for the viewing, creation, editing and deleting of schedules
 
-    - Users can navigate to a open thread or start a new one
+    - All schedules that have been released show up here
     
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
+    - Total shifts in schedule are viewable 
 
 <br clear="left"/>
 <br/><br/>
@@ -184,22 +176,17 @@ Django Database / Rest Api Application
 
 ## Admin Employee Record Screen
 
-    - This screen shows the open chat threads
-
-    - Users can navigate to a open thread or start a new one
+    - This screen lists all employees in the database
     
-    - Threads have the last message displyed with date 
+    - New employees can be added from this screen
+
+    - Employees can be editied by viewing employee
     
     - User initials fill in their avatar circle 
 
 <br clear="left"/>
 <br/><br/>
   
-<h2 align="center">Entity Relationship Diagram</h2>
-
-<p align="center">
-  <img width="700" src="https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg">
-</p>
 
 
 
