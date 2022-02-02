@@ -7,18 +7,9 @@
 
 The goal of this project is to create an employee scheduling platform that will streamline all tasks involving employee scheduling. Allow a company the able to update/post schedules, communicate with employees, accept timecard submissions remotely and automatically. All while increasing efficiency and eliminating human error.
 
-
 ### Motivation
 
 Two out of three of my last employers did not use database driven scheduling systems. Using basic methods always resulted in human error. Employees would be over scheduled, under scheduled, delays int getting schedules out. This not only affected the employers but the also the morale of employees.
-
-## Poster
-
-<p align="center">
-  <img width="700" src="https://user-images.githubusercontent.com/25330599/152237113-0bae78b0-7675-4bea-8add-c16434e4defb.jpg">
-</p>
-
-
 
 ### Frontend & Backend
 
@@ -27,6 +18,12 @@ Two out of three of my last employers did not use database driven scheduling sys
 - Database SQL: SQLite
 - Hosted: Google Cloud, Apache HTTP Server
 - Languages: Dart, Python, SQLite
+
+<h2 align="center">Poster</h2>
+
+<p align="center">
+  <img width="700" src="https://user-images.githubusercontent.com/25330599/152237113-0bae78b0-7675-4bea-8add-c16434e4defb.jpg">
+</p>
 
 
 <h2 align="center">Entity Relationship Diagram</h2>
@@ -39,8 +36,6 @@ Two out of three of my last employers did not use database driven scheduling sys
 
 
 <h2 align="center">Flutter App Examples</h2>
-
-<br/><br/>
 
 <img src="https://user-images.githubusercontent.com/25330599/152046435-9b518308-41c7-4a7d-83d3-3c6def384506.png" align="left" width="200px"/>
 
