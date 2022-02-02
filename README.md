@@ -93,9 +93,9 @@ int foo() {
 
 
 <img src="https://user-images.githubusercontent.com/25330599/152046466-80d175ef-2da7-4d62-b881-391aefb21ca0.png" align="left" width="200px"/>
-<br/><br/>
+
 ## WorkChat Screen
-<br/><br/>
+
     - This screen shows the open chat threads
 
     - Users can navigate to a open thread or start a new one
