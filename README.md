@@ -200,8 +200,10 @@ Django Database / Rest Api Application
 <p align="center">
 
 ## Entity Relationship Diagram 
+  
+<h2 align="center">Entity Relationship Diagram</h2>
 
-<img src="https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg" align="center" width="700px"/>
+<img src="https://user-images.githubusercontent.com/25330599/152046522-6edb2ed2-8a5a-41f2-9166-dd5d237e19d0.jpg" width="700px"/>
   
 </p>
 
