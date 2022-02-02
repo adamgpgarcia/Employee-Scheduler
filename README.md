@@ -27,7 +27,7 @@ Django Database / Rest Api Application
 * **cd /var/www/html/RestApi/src**
 * **sudo python3 manage.py runserver 0.0.0.0:8000**
 
-       
+
 
 <br clear="left"/>
 <br/><br/>
@@ -47,9 +47,39 @@ Django Database / Rest Api Application
 <br clear="left"/>
 <br/><br/>
 
-<img src="https://user-images.githubusercontent.com/25330599/152046452-498a5693-f172-40c8-b1a9-caeca9f797e2.png" align="right" width="200px"/>
+<img src="https://user-images.githubusercontent.com/25330599/152046476-df3da065-2d47-45b4-a801-42c1a84ad4b6.png" align="right" width="200px"/>
 
-## Admin Dashboard Screen
+## Schedule Viewer Screen
+
+    - This screen shows the open chat threads
+
+    - Users can navigate to a open thread or start a new one
+    
+    - Threads have the last message displyed with date 
+    
+    - User initials fill in their avatar circle 
+
+<br clear="left"/>
+<br/><br/>
+
+<img src="https://user-images.githubusercontent.com/25330599/152046484-cfa3aeaa-4213-4203-8d01-cfe98f5296db.png" align="left" width="200px"/>
+
+## Availibility Screen
+
+    - This screen shows the open chat threads
+
+    - Users can navigate to a open thread or start a new one
+    
+    - Threads have the last message displyed with date 
+    
+    - User initials fill in their avatar circle 
+
+<br clear="left"/>
+<br/><br/>
+
+<img src="https://user-images.githubusercontent.com/25330599/152046458-833b358d-4890-45a4-884a-1c1f6636e79e.png" align="right" width="200px"/>
+
+## Timecard Screen
 
     - This screen shows the open chat threads
 
@@ -77,22 +107,7 @@ Django Database / Rest Api Application
 <br clear="left"/>
 <br/><br/>
 
-<img src="https://user-images.githubusercontent.com/25330599/152046458-833b358d-4890-45a4-884a-1c1f6636e79e.png" align="right" width="200px"/>
-
-## Timecard Screen
-
-    - This screen shows the open chat threads
-
-    - Users can navigate to a open thread or start a new one
-    
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
-
-<br clear="left"/>
-<br/><br/>
-    
-<img src="https://user-images.githubusercontent.com/25330599/152046466-80d175ef-2da7-4d62-b881-391aefb21ca0.png" align="left" width="200px"/>
+<img src="https://user-images.githubusercontent.com/25330599/152208480-d03afb51-39e2-4726-a78e-80adc2a9a80b.png" align="right" width="200px"/>
 
 ## Single Chat Screen
 
@@ -107,24 +122,9 @@ Django Database / Rest Api Application
 <br clear="left"/>
 <br/><br/>
 
-<img src="https://user-images.githubusercontent.com/25330599/152046476-df3da065-2d47-45b4-a801-42c1a84ad4b6.png" align="right" width="200px"/>
+<img src="https://user-images.githubusercontent.com/25330599/152046452-498a5693-f172-40c8-b1a9-caeca9f797e2.png" align="left" width="200px"/>
 
-## Schedule Viewer Screen
-
-    - This screen shows the open chat threads
-
-    - Users can navigate to a open thread or start a new one
-    
-    - Threads have the last message displyed with date 
-    
-    - User initials fill in their avatar circle 
-
-<br clear="left"/>
-<br/><br/>
-    
-<img src="https://user-images.githubusercontent.com/25330599/152046484-cfa3aeaa-4213-4203-8d01-cfe98f5296db.png" align="left" width="200px"/>
-
-## Availibility Screen
+## Admin Dashboard Screen
 
     - This screen shows the open chat threads
 
@@ -182,9 +182,9 @@ Django Database / Rest Api Application
 <br clear="left"/>
 <br/><br/>
     
-<img src="https://user-images.githubusercontent.com/25330599/152046484-cfa3aeaa-4213-4203-8d01-cfe98f5296db.png" align="left" width="200px"/>
+<img src="https://user-images.githubusercontent.com/25330599/152209096-ed92da84-9f69-4c72-82fc-c27e93e7c29e.png" align="left" width="200px"/>
 
-## Employee Record Screen
+## Admin Employee Record Screen
 
     - This screen shows the open chat threads
 
